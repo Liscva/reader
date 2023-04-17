@@ -72,7 +72,7 @@
 
     <ReplaceRule v-model="showReplaceRuleDialog" />
 
-    <MPCode v-model="showMPCodeDialog" />
+    <MPCode v-model="showMPCodeDialog"/>
 
     <BookManage v-model="showBookManageDialog" />
 

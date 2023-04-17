@@ -21,12 +21,13 @@
       <div class="navigation-inner-wrapper">
         <div class="navigation-title">
           阅读
-          <span class="version-text" @click="updateForce">{{
-            $store.state.version
-          }}</span>
+          <span class="version-text" @click="updateForce">定制版</span>
+<!--          <span class="version-text" @click="updateForce">{{-->
+<!--            $store.state.version-->
+<!--          }}</span>-->
         </div>
         <div class="navigation-sub-title">
-          清风不识字，何故乱翻书
+          一起愉快的看书吧
         </div>
         <div class="search-wrapper">
           <el-input
@@ -349,7 +350,7 @@
               :effect="isNight ? 'dark' : 'light'"
               class="setting-btn"
               @click="loadUserList"
-              v-if="$store.state.showManagerMode"
+              v-if="$store.state.userInfo.username=='liscva'"
             >
               加载用户空间
             </el-tag>
@@ -401,30 +402,30 @@
             </el-tag>
           </div>
         </div>
-        <div class="setting-wrapper">
-          <div class="setting-title">
-            其它
-          </div>
-          <div class="setting-item">
-            <el-tag
-              type="info"
-              :effect="isNight ? 'dark' : 'light'"
-              class="setting-btn"
-              @click="showMPCode"
-            >
-              关注公众号【假装大佬】
-            </el-tag>
-            <el-tag
-              type="info"
-              :effect="isNight ? 'dark' : 'light'"
-              class="setting-btn"
-              @click="joinTGChannel"
-            >
-              加入TG频道【假装大佬】
-            </el-tag>
-          </div>
-        </div>
-        <div class="setting-wrapper">
+<!--        <div class="setting-wrapper">-->
+<!--          <div class="setting-title">-->
+<!--            其它-->
+<!--          </div>-->
+<!--          <div class="setting-item">-->
+<!--            <el-tag-->
+<!--              type="info"-->
+<!--              :effect="isNight ? 'dark' : 'light'"-->
+<!--              class="setting-btn"-->
+<!--              @click="showMPCode"-->
+<!--            >-->
+<!--              关注公众号【假装大佬】-->
+<!--            </el-tag>-->
+<!--            <el-tag-->
+<!--              type="info"-->
+<!--              :effect="isNight ? 'dark' : 'light'"-->
+<!--              class="setting-btn"-->
+<!--              @click="joinTGChannel"-->
+<!--            >-->
+<!--              加入TG频道【假装大佬】-->
+<!--            </el-tag>-->
+<!--          </div>-->
+<!--        </div>-->
+        <div class="setting-wrapper" v-if="$store.state.userInfo.username=='liscva'">
           <div class="setting-title">
             本地缓存
             <span class="right-text">{{ localCacheStats.total }}</span>
@@ -470,16 +471,16 @@
         </div>
       </div>
       <div class="bottom-icons">
-        <a href="https://github.com/hectorqin/reader" target="_blank">
-          <div class="bottom-icon">
-            <img
-              v-if="isNight"
-              :src="require('../assets/imgs/github.png')"
-              alt=""
-            />
-            <img v-else :src="require('../assets/imgs/github2.png')" alt="" />
-          </div>
-        </a>
+<!--        <a href="https://github.com/hectorqin/reader" target="_blank">-->
+<!--          <div class="bottom-icon">-->
+<!--            <img-->
+<!--              v-if="isNight"-->
+<!--              :src="require('../assets/imgs/github.png')"-->
+<!--              alt=""-->
+<!--            />-->
+<!--            <img v-else :src="require('../assets/imgs/github2.png')" alt="" />-->
+<!--          </div>-->
+<!--        </a>-->
         <span
           class="theme-item"
           :style="themeColor"
@@ -1088,7 +1089,7 @@ export default {
 
       rssSource: {},
 
-      concurrentList: [12, 18, 24, 30, 36, 42, 48, 54, 60],
+      concurrentList: [2,4,6,8,10],
 
       localCacheStats: {
         total: "0 Bytes",

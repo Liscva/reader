@@ -4,9 +4,9 @@ reader:
     showUI: false
     debug: false
     packaged: false
-    secure: false
+    secure: true
     inviteCode: ""
-    secureKey: ""
+    secureKey: "a130312073"
     proxy: false
     proxyType: "HTTP"
     proxyHost: ""
@@ -20,7 +20,7 @@ reader:
     autoClearInactiveUser: 0
 
   server:
-    port: 8080
+    port: 9999
     webUrl: http://localhost:${reader.server.port}
 
 logging:

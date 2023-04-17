@@ -638,8 +638,12 @@ class BookController(coroutineContext: CoroutineContext): BaseController(corouti
             page = context.queryParam("page").firstOrNull()?.toInt() ?: 1
         }
 
-        var result = WebBook(bookSource, false).exploreBook(ruleFindUrl, page)
-        return returnData.setData(result)
+        try {
+            var result = WebBook(bookSource, false).exploreBook(ruleFindUrl, page)
+            return returnData.setData(result)
+        }catch (e: Exception) {
+            return returnData.setErrorMsg("书源连接异常")
+        }
     }
 
     suspend fun searchBook(context: RoutingContext): ReturnData {

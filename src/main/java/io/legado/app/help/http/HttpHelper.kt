@@ -31,9 +31,9 @@ val okHttpClient: OkHttpClient by lazy {
     )
 
     val builder = OkHttpClient.Builder()
-        .connectTimeout(15, TimeUnit.SECONDS)
-        .writeTimeout(15, TimeUnit.SECONDS)
-        .readTimeout(15, TimeUnit.SECONDS)
+        .connectTimeout(5, TimeUnit.SECONDS)
+        .writeTimeout(5, TimeUnit.SECONDS)
+        .readTimeout(5, TimeUnit.SECONDS)
         .sslSocketFactory(SSLHelper.unsafeSSLSocketFactory, SSLHelper.unsafeTrustManager)
         .retryOnConnectionFailure(true)
         .hostnameVerifier(SSLHelper.unsafeHostnameVerifier)

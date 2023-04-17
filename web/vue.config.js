@@ -84,7 +84,7 @@ module.exports = {
   publicPath: "./",
   productionSourceMap: false,
   devServer: {
-    port: 8081
+    port: 9998
   },
   // 编译依赖为 es5
   transpileDependencies: ["element-ui", "codejar", "vue-lazyload"],
